@@ -1,0 +1,39 @@
+# depslib dependency file v1.0
+1471889034 source:/home/lucas/Documents/TrabalhoPratico1/main.c
+	<stdio.h>
+	<stdlib.h>
+	"TrabalhoPratico1.h"
+
+1470949139 /home/lucas/Documents/TrabalhoPratico1/TrabalhoPratico1.h
+
+1472471682 source:/home/lucas/Documents/TrabalhoPratico1/TrabalhoPratico1.c
+	<stdio.h>
+	<string.h>
+	"estruturas.h"
+	"Validadores.h"
+	"arquivos.h"
+	"crud.h"
+
+1472470393 source:/home/lucas/Documents/TrabalhoPratico1/arquivos.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	"estruturas.h"
+
+1471181382 /home/lucas/Documents/TrabalhoPratico1/estruturas.h
+
+1471451447 source:/home/lucas/Documents/TrabalhoPratico1/Validadores.c
+	<string.h>
+
+1470967757 /home/lucas/Documents/TrabalhoPratico1/Validadores.h
+
+1472470032 /home/lucas/Documents/TrabalhoPratico1/arquivos.h
+	<stdio.h>
+	"estruturas.h"
+
+1472470309 source:/home/lucas/Documents/TrabalhoPratico1/crud.c
+	<stdio.h>
+	"arquivos.h"
+
+1471451679 /home/lucas/Documents/TrabalhoPratico1/crud.h
+

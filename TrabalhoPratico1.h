@@ -1,0 +1,8 @@
+#ifndef TRABALHOPRATICO1_H_INCLUDED
+#define TRABALHOPRATICO1_H_INCLUDED
+
+void helloWorld();
+
+int iniciar();
+
+#endif // TRABALHOPRATICO1_H_INCLUDED
