@@ -1,0 +1,10 @@
+#data files
+*.dat
+
+#folders
+bin/
+obj/
+
+#compiled
+*.o
+*.exe
