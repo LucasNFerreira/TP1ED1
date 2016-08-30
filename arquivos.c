@@ -36,6 +36,24 @@ int pesquisaFuncionario(FILE *funcPtr, char mat){
 }
 
 /**
+* pesquisa se aquele id já foi cadastrada para um funcionario,
+* caso positivo, retorna a posição no arquivo em que ele se encontra,
+* senão retorna -1
+*/
+int pesquisaFuncionarioById(FILE *funcPtr, long id){
+    Funcionario rf;
+    int posicao = 0;
+    fseek(funcPtr,0,SEEK_SET);/*rewind(a);*/
+    while(fread(&rf,sizeof(Funcionario),1,funcPtr) == 1){
+        if(rf.id == id){
+            return posicao;
+        }
+        posicao++;
+    }
+    return -1;
+}
+
+/**
 * pesquisa se aquele id já foi cadastrado para um dado departamento,
 * caso positivo, retorna a posição no arquivo em que ele se encontra,
 * senão retorna -1

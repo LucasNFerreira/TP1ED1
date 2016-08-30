@@ -6,7 +6,7 @@
 
 1470949139 /home/lucas/Documents/TrabalhoPratico1/TrabalhoPratico1.h
 
-1472471682 source:/home/lucas/Documents/TrabalhoPratico1/TrabalhoPratico1.c
+1472511969 source:/home/lucas/Documents/TrabalhoPratico1/TrabalhoPratico1.c
 	<stdio.h>
 	<string.h>
 	"estruturas.h"
@@ -14,7 +14,7 @@
 	"arquivos.h"
 	"crud.h"
 
-1472470393 source:/home/lucas/Documents/TrabalhoPratico1/arquivos.c
+1472512732 source:/home/lucas/Documents/TrabalhoPratico1/arquivos.c
 	<stdlib.h>
 	<string.h>
 	<stdio.h>
@@ -22,12 +22,12 @@
 
 1471181382 /home/lucas/Documents/TrabalhoPratico1/estruturas.h
 
-1471451447 source:/home/lucas/Documents/TrabalhoPratico1/Validadores.c
+1472511680 source:/home/lucas/Documents/TrabalhoPratico1/Validadores.c
 	<string.h>
 
 1470967757 /home/lucas/Documents/TrabalhoPratico1/Validadores.h
 
-1472470032 /home/lucas/Documents/TrabalhoPratico1/arquivos.h
+1472512708 /home/lucas/Documents/TrabalhoPratico1/arquivos.h
 	<stdio.h>
 	"estruturas.h"
 
@@ -35,5 +35,5 @@
 	<stdio.h>
 	"arquivos.h"
 
-1471451679 /home/lucas/Documents/TrabalhoPratico1/crud.h
+1472512047 /home/lucas/Documents/TrabalhoPratico1/crud.h
 

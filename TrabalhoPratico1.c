@@ -53,7 +53,7 @@ void menu(){
 			cadastroDepartamento(deptPtr);
 			break;
 		case 2:
-            cadastroFuncionario();
+            cadastroFuncionario(funcPtr, deptPtr);
 			break;
 		}
 

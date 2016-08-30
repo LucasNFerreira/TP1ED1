@@ -5,6 +5,7 @@
 #include "estruturas.h"
 
 int pesquisaFuncionario(FILE *funcPtr, char mat);
+int pesquisaFuncionarioById(FILE *funcPtr, long id);
 int pesquisaDepartamento(FILE *deptPtr, int id);
 int arquivaFuncionario(FILE *funcPtr, Funcionario rf);
 int arquivaDepartamento(FILE *deptPtr, Departamento rd);
