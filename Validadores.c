@@ -9,7 +9,7 @@ int campovazio(char *nome){
 }
 
 
-int validadata(char *data){
+int validaData(char *data){
     int dia,mes,ano,n1,n2,n3;
     /* convertendo a data char para int */
     n1=(data[0]-48)*10;

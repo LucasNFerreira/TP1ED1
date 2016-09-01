@@ -1,5 +1,10 @@
 #include <stdio.h>
+#include <string.h>
+
+#include "TrabalhoPratico1.h"
 #include "arquivos.h"
+#include "Validadores.h"
+
 
 int cadastroDepartamento(FILE *deptPtr){
     int sair = 0;
@@ -8,7 +13,7 @@ int cadastroDepartamento(FILE *deptPtr){
         limpartela();
         enunciado();
         printf(" - Forneca o id do departamento: ");
-        scanf("%d", &sdepartamento.id);
+        scanf("%ld", &sdepartamento.id);
         limpartela();
         enunciado();
         if(pesquisaDepartamento(deptPtr, sdepartamento.id) == -1){
@@ -73,7 +78,7 @@ int cadastroFuncionario(FILE *funcPtr, FILE *deptPtr){
             printf("Forneca a data de nascimento do(a) %s:", sfuncionario.nome);
             setbuf(stdin, NULL);
             fgets(sfuncionario.dataNascimento,11,stdin);
-        }while(validadata(sfuncionario.dataNascimento) != 1);
+        }while(validaData(sfuncionario.dataNascimento) != 1);
 
         do{
             limpartela();
@@ -126,7 +131,7 @@ int cadastroFuncionario(FILE *funcPtr, FILE *deptPtr){
             limpartela();
             enunciado();
             printf("Forneca o numero:");
-            scanf("%l",sfuncionario.numero);
+            scanf("%ld", &sfuncionario.numero);
         }while(sfuncionario.numero <= 0);
         do{
             limpartela();

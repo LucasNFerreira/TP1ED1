@@ -4,9 +4,9 @@
 	<stdlib.h>
 	"TrabalhoPratico1.h"
 
-1470949139 /home/lucas/Documents/TrabalhoPratico1/TrabalhoPratico1.h
+1472737493 /home/lucas/Documents/TrabalhoPratico1/TrabalhoPratico1.h
 
-1472511969 source:/home/lucas/Documents/TrabalhoPratico1/TrabalhoPratico1.c
+1472737461 source:/home/lucas/Documents/TrabalhoPratico1/TrabalhoPratico1.c
 	<stdio.h>
 	<string.h>
 	"estruturas.h"
@@ -14,7 +14,7 @@
 	"arquivos.h"
 	"crud.h"
 
-1472512732 source:/home/lucas/Documents/TrabalhoPratico1/arquivos.c
+1472737383 source:/home/lucas/Documents/TrabalhoPratico1/arquivos.c
 	<stdlib.h>
 	<string.h>
 	<stdio.h>
@@ -22,18 +22,21 @@
 
 1471181382 /home/lucas/Documents/TrabalhoPratico1/estruturas.h
 
-1472511680 source:/home/lucas/Documents/TrabalhoPratico1/Validadores.c
+1472739235 source:/home/lucas/Documents/TrabalhoPratico1/Validadores.c
 	<string.h>
 
-1470967757 /home/lucas/Documents/TrabalhoPratico1/Validadores.h
+1472739155 /home/lucas/Documents/TrabalhoPratico1/Validadores.h
 
-1472512708 /home/lucas/Documents/TrabalhoPratico1/arquivos.h
+1472736955 /home/lucas/Documents/TrabalhoPratico1/arquivos.h
 	<stdio.h>
 	"estruturas.h"
 
-1472470309 source:/home/lucas/Documents/TrabalhoPratico1/crud.c
+1472739322 source:/home/lucas/Documents/TrabalhoPratico1/crud.c
 	<stdio.h>
+	<string.h>
+	"TrabalhoPratico1.h"
 	"arquivos.h"
+	"Validadores.h"
 
 1472512047 /home/lucas/Documents/TrabalhoPratico1/crud.h
 
