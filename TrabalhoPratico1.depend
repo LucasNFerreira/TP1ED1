@@ -40,3 +40,45 @@
 
 1472512047 /home/lucas/Documents/TrabalhoPratico1/crud.h
 
+1472750220 source:c:\users\usuario\desktop\tp1ed1-master\crud.c
+	<stdio.h>
+	<string.h>
+	"TrabalhoPratico1.h"
+	"arquivos.h"
+	"Validadores.h"
+
+1472750220 c:\users\usuario\desktop\tp1ed1-master\trabalhopratico1.h
+
+1472839670 c:\users\usuario\desktop\tp1ed1-master\arquivos.h
+	<stdio.h>
+	"estruturas.h"
+
+1472750220 c:\users\usuario\desktop\tp1ed1-master\estruturas.h
+
+1472750220 c:\users\usuario\desktop\tp1ed1-master\validadores.h
+
+1472750220 source:c:\users\usuario\desktop\tp1ed1-master\main.c
+	<stdio.h>
+	<stdlib.h>
+	"TrabalhoPratico1.h"
+
+1472750220 source:c:\users\usuario\desktop\tp1ed1-master\validadores.c
+	<string.h>
+
+1472839670 source:c:\users\usuario\desktop\tp1ed1-master\arquivos.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	"estruturas.h"
+
+1472840243 source:c:\users\usuario\desktop\tp1ed1-master\trabalhopratico1.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"estruturas.h"
+	"Validadores.h"
+	"arquivos.h"
+	"crud.h"
+
+1472750220 c:\users\usuario\desktop\tp1ed1-master\crud.h
+

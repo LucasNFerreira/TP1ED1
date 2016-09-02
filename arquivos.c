@@ -3,6 +3,15 @@
 #include <stdio.h>
 #include "estruturas.h"
 
+long getNewIdFuncionario(FILE *funcPtr){
+        fseek(funcPtr, 0, SEEK_END);
+        return (ftell(funcPtr)/sizeof(Funcionario) + 1);
+}
+
+long getNewIdDepartamento(FILE *deptPtr){
+        fseek(deptPtr, 0, SEEK_END);
+        return (ftell(deptPtr)/sizeof(Departamento) + 1);
+}
 
 FILE *abrirArquivo(char caminho[]){
     FILE *filePtr;
@@ -59,7 +68,7 @@ int pesquisaFuncionarioById(FILE *funcPtr, long id){
 * senão retorna -1
 */
 
-int pesquisaDepartamento(FILE *deptPtr, int id){
+int pesquisaDepartamento(FILE *deptPtr, long id){
     Departamento rd;
     int posicao = 0;
     fseek(deptPtr, 0 ,SEEK_SET);/*rewind(a);*/
@@ -139,17 +148,83 @@ int arquivaHistDept(FILE *histDept, HistoricoDepartamento rhd){
 * caso tenha obtido sucesso ou 0 caso não tenha sido
 * possível acessar o arquivo
 */
+
 int alteraRegistroFuncionario(FILE *funcPtr, Funcionario rf, int pos){
     if(pos != -1){
-        FILE *funcPtr;
-        fseek(funcPtr, 0, pos);
+        fseek(funcPtr, (pos * sizeof(Funcionario)), SEEK_SET);
         fwrite(&rf, sizeof(Funcionario), 1, funcPtr);
         return 1;
     }
     return 0;
 }
 
+/**
+* Efetua a alteração de um dado registro no arquivo de
+* departamentos, pesquisando primeiro para verificar a
+* existência do registro a ser alterado e retorna 1
+* caso tenha obtido sucesso ou 0 caso não tenha sido
+* possível acessar o arquivo
+*/
 
+int alteraRegistroDepartamento(FILE *deptPtr, Departamento rd, int pos){
+    if(pos != -1){
+        fseek(deptPtr, (pos * sizeof(Departamento)), SEEK_SET);
+        fwrite(&rd, sizeof(Departamento), 1, deptPtr);
+        return 1;
+    }
+    return 0;
+}
+
+/**
+* Efetua a alteração de um dado registro no arquivo de
+* Historico Departamento, pesquisando primeiro para verificar a
+* existência do registro a ser alterado e retorna 1
+* caso tenha obtido sucesso ou 0 caso não tenha sido
+* possível acessar o arquivo
+*/
+
+int alteraRegistroHistDept(FILE *histDeptPtr, HistoricoDepartamento rhd, int pos){
+    if(pos != -1){
+        fseek(histDeptPtr, (pos * sizeof(HistoricoDepartamento)), SEEK_SET);
+        fwrite(&rhd, sizeof(HistoricoDepartamento), 1, histDeptPtr);
+        return 1;
+    }
+    return 0;
+}
+
+/**
+* Efetua a alteração de um dado registro no arquivo de
+* Historico Funcionario, pesquisando primeiro para verificar a
+* existência do registro a ser alterado e retorna 1
+* caso tenha obtido sucesso ou 0 caso não tenha sido
+* possível acessar o arquivo
+*/
+
+int alteraRegistroHistFunc(FILE *histFuncPtr, HistoricoFuncionario rhf, int pos){
+    if(pos != -1){
+        fseek(histFuncPtr, (pos * sizeof(HistoricoFuncionario)), SEEK_SET);
+        fwrite(&rhf, sizeof(HistoricoFuncionario), 1, histFuncPtr);
+        return 1;
+    }
+    return 0;
+}
+
+/**
+* Efetua a alteração de um dado registro no arquivo de
+* Historico Salario, pesquisando primeiro para verificar a
+* existência do registro a ser alterado e retorna 1
+* caso tenha obtido sucesso ou 0 caso não tenha sido
+* possível acessar o arquivo
+*/
+
+int alteraRegistroHistSal(FILE *histSalPtr, HistoricoSalario rhs, int pos){
+    if(pos != -1){
+        fseek(histSalPtr, (pos * sizeof(HistoricoSalario)), SEEK_SET);
+        fwrite(&rhs, sizeof(HistoricoSalario), 1, histSalPtr);
+        return 1;
+    }
+    return 0;
+}
 
 /**
 * Efetua uma consulta à um dado registro no arquivo de
@@ -184,4 +259,56 @@ Departamento *consultaDepartamento(FILE *deptPtr, int pos){
     }
     return NULL;
 }
+
+/**
+* Efetua uma consulta à um dado registro no arquivo de
+* historico departamento, pesquisando primeiro para vrificar a
+* existência do registro a ser consultado e retorna-o
+* caso tenha obtido sucesso ou NULL caso não tenha sido
+* possível acessar o arquivo ou não tenha sido encontrado
+*/
+HistoricoDepartamento *consultaHistDepartamento(FILE *histDeptPtr, int pos){
+    HistoricoDepartamento *rhd = (HistoricoDepartamento*)malloc(sizeof(HistoricoDepartamento));
+    if(pos != -1){
+        fseek(histDeptPtr, (pos * sizeof(HistoricoDepartamento)), SEEK_SET);
+        fread(&rhd, sizeof(HistoricoDepartamento), 1, histDeptPtr);
+        return rhd;
+    }
+    return NULL;
+}
+
+/**
+* Efetua uma consulta à um dado registro no arquivo de
+* historico Funcionario, pesquisando primeiro para vrificar a
+* existência do registro a ser consultado e retorna-o
+* caso tenha obtido sucesso ou NULL caso não tenha sido
+* possível acessar o arquivo ou não tenha sido encontrado
+*/
+HistoricoFuncionario* consultaHistFuncionario(FILE *histFuncPtr, int pos){
+    HistoricoFuncionario *rhd = (HistoricoFuncionario*)malloc(sizeof(HistoricoFuncionario));
+    if(pos != -1){
+        fseek(histFuncPtr, (pos * sizeof(HistoricoFuncionario)), SEEK_SET);
+        fread(&rhd, sizeof(HistoricoFuncionario), 1, histFuncPtr);
+        return rhd;
+    }
+    return NULL;
+}
+
+/**
+* Efetua uma consulta à um dado registro no arquivo de
+* historico Funcionario, pesquisando primeiro para vrificar a
+* existência do registro a ser consultado e retorna-o
+* caso tenha obtido sucesso ou NULL caso não tenha sido
+* possível acessar o arquivo ou não tenha sido encontrado
+*/
+HistoricoSalario *consultaHistSalario(FILE *histSalPtr, int pos){
+    HistoricoSalario *rhs = (HistoricoSalario*)malloc(sizeof(HistoricoSalario));
+    if(pos != -1){
+        fseek(histSalPtr, (pos * sizeof(HistoricoSalario)), SEEK_SET);
+        fread(&rhs, sizeof(HistoricoSalario), 1, histSalPtr);
+        return rhs;
+    }
+    return NULL;
+}
+
 

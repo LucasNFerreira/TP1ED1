@@ -4,9 +4,12 @@
 #include <stdio.h>
 #include "estruturas.h"
 
+long getNewIdFuncionario(FILE *funcPtr);
+long getNewIdDepartamento(FILE *deptPtr);
+
 FILE *abrirArquivo(char *caminho);
 
-int pesquisaFuncionario(FILE *funcPtr, char mat);
+int pesquisaFuncionario(FILE *funcPtr, char *mat);
 int pesquisaFuncionarioById(FILE *funcPtr, long id);
 int pesquisaDepartamento(FILE *deptPtr, int id);
 
@@ -17,9 +20,16 @@ int arquivaHistFunc(FILE *histFunc, HistoricoFuncionario rhf);
 int arquivaHistDept(FILE *histDept, HistoricoDepartamento rhd);
 
 int alteraRegistroFuncionario(FILE *funcPtr, Funcionario rf);
+int alteraRegistroDepartamento(FILE *deptPtr, Departamento rd, int pos);
+int alteraRegistroHistDept(FILE *histDeptPtr, HistoricoDepartamento rhd, int pos);
+int alteraRegistroHistFunc(FILE *histFuncPtr, HistoricoFuncionario rhf, int pos);
+int alteraRegistroHistSal(FILE *histSalPtr, HistoricoSalario rhs, int pos);
 
 Funcionario *consultaFuncionario(FILE *funcPtr, int id);
 Departamento *consultaDepartamento(FILE *deptPtr, int pos);
+HistoricoDepartamento *consultaHistDepartamento(FILE *histDeptPtr, int pos);
+HistoricoFuncionario *consultaHistFuncionario(FILE *histFuncPtr, int pos);
+HistoricoSalario *consultaHistSalario(FILE *histSalPtr, int pos);
 
 
 

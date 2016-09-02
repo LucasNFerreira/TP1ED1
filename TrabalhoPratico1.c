@@ -1,10 +1,17 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 #include "estruturas.h"
 #include "Validadores.h"
 #include "arquivos.h"
 #include "crud.h"
+
+#define FUNCIONARIOS "arquivos/func.dat"
+#define DEPARTAMENTOS "arquivos/dept.dat"
+#define HIST_DEPARTAMENTOS "arquivos/histDept.dat"
+#define HIST_FUNCIONARIOS "arquivos/histFunc.dat"
+#define HIST_SALARIOS "arquivos/histSal.dat"
 
 void enunciado() {
 	printf("\n--------------------------------------------------------------------------------");
@@ -21,12 +28,11 @@ void menu(){
 
     FILE *funcPtr, *deptPtr, *histFuncPtr, *histDeptPtr, *histSalPtr;
 
-    funcPtr = abrirArquivo("arquivos/func.dat");
-    deptPtr = abrirArquivo("arquivos/dept.dat");
-    histFuncPtr = abrirArquivo("arquivos/histFunc.dat");
-    histDeptPtr = abrirArquivo("arquivos/histDept.dat");
-    histSalPtr = abrirArquivo("arquivos/histSal.dat");
-
+    funcPtr = abrirArquivo(FUNCIONARIOS);
+    deptPtr = abrirArquivo(DEPARTAMENTOS);
+    histFuncPtr = abrirArquivo(HIST_FUNCIONARIOS);
+    histDeptPtr = abrirArquivo(HIST_DEPARTAMENTOS);
+    histSalPtr = abrirArquivo(HIST_SALARIOS);
 
     int operador;
     do {
