@@ -19,7 +19,7 @@ int arquivaHistSal(FILE *histSalPtr, HistoricoSalario rhs);
 int arquivaHistFunc(FILE *histFunc, HistoricoFuncionario rhf);
 int arquivaHistDept(FILE *histDept, HistoricoDepartamento rhd);
 
-int alteraRegistroFuncionario(FILE *funcPtr, Funcionario rf);
+int alteraRegistroFuncionario(FILE *funcPtr, Funcionario rf, int pos);
 int alteraRegistroDepartamento(FILE *deptPtr, Departamento rd, int pos);
 int alteraRegistroHistDept(FILE *histDeptPtr, HistoricoDepartamento rhd, int pos);
 int alteraRegistroHistFunc(FILE *histFuncPtr, HistoricoFuncionario rhf, int pos);

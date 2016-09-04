@@ -3,5 +3,8 @@
 
 int cadastroDepartamento(FILE *deptPtr);
 int cadastroFuncionario(FILE *funcPtr, FILE *deptPtr);
+int alterarFuncionario(FILE *funcPtr, FILE *deptPtr);
+int alterarDepartamentoFuncionario(FILE *funcPtr, FILE *deptPtr);
+int exibirFuncionario(FILE *funcPtr);
 
 #endif // CRUD_H_INCLUDED

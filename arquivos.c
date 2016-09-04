@@ -195,7 +195,7 @@ int alteraRegistroHistDept(FILE *histDeptPtr, HistoricoDepartamento rhd, int pos
 /**
 * Efetua a alteração de um dado registro no arquivo de
 * Historico Funcionario, pesquisando primeiro para verificar a
-* existência do registro a ser alterado e retorna 1
+* existência dřo registro a ser alterado e retorna 1
 * caso tenha obtido sucesso ou 0 caso não tenha sido
 * possível acessar o arquivo
 */
@@ -237,7 +237,7 @@ Funcionario *consultaFuncionario(FILE *funcPtr, int pos){
     Funcionario *rf = (Funcionario*) malloc(sizeof(Funcionario));
     if(pos != -1){
         fseek(funcPtr, (pos * sizeof(Funcionario)), SEEK_SET);
-        fread(&rf, sizeof(Funcionario), 1, funcPtr);
+        fread(rf, sizeof(Funcionario), 1, funcPtr);
         return rf;
     }
     return NULL;
@@ -254,7 +254,7 @@ Departamento *consultaDepartamento(FILE *deptPtr, int pos){
     Departamento *rd = (Departamento*)malloc(sizeof(Departamento));
     if(pos != -1){
         fseek(deptPtr, (pos * sizeof(Departamento)), SEEK_SET);
-        fread(&rd, sizeof(Departamento), 1, deptPtr);
+        fread(rd, sizeof(Departamento), 1, deptPtr);
         return rd;
     }
     return NULL;
@@ -271,7 +271,7 @@ HistoricoDepartamento *consultaHistDepartamento(FILE *histDeptPtr, int pos){
     HistoricoDepartamento *rhd = (HistoricoDepartamento*)malloc(sizeof(HistoricoDepartamento));
     if(pos != -1){
         fseek(histDeptPtr, (pos * sizeof(HistoricoDepartamento)), SEEK_SET);
-        fread(&rhd, sizeof(HistoricoDepartamento), 1, histDeptPtr);
+        fread(rhd, sizeof(HistoricoDepartamento), 1, histDeptPtr);
         return rhd;
     }
     return NULL;
@@ -288,7 +288,7 @@ HistoricoFuncionario* consultaHistFuncionario(FILE *histFuncPtr, int pos){
     HistoricoFuncionario *rhd = (HistoricoFuncionario*)malloc(sizeof(HistoricoFuncionario));
     if(pos != -1){
         fseek(histFuncPtr, (pos * sizeof(HistoricoFuncionario)), SEEK_SET);
-        fread(&rhd, sizeof(HistoricoFuncionario), 1, histFuncPtr);
+        fread(rhd, sizeof(HistoricoFuncionario), 1, histFuncPtr);
         return rhd;
     }
     return NULL;
@@ -305,7 +305,7 @@ HistoricoSalario *consultaHistSalario(FILE *histSalPtr, int pos){
     HistoricoSalario *rhs = (HistoricoSalario*)malloc(sizeof(HistoricoSalario));
     if(pos != -1){
         fseek(histSalPtr, (pos * sizeof(HistoricoSalario)), SEEK_SET);
-        fread(&rhs, sizeof(HistoricoSalario), 1, histSalPtr);
+        fread(rhs, sizeof(HistoricoSalario), 1, histSalPtr);
         return rhs;
     }
     return NULL;

@@ -13,14 +13,14 @@
 #define HIST_FUNCIONARIOS "arquivos/histFunc.dat"
 #define HIST_SALARIOS "arquivos/histSal.dat"
 
-void enunciado() {
+void enunciado(){
 	printf("\n--------------------------------------------------------------------------------");
 	printf("|               - Primeiro trabalho pratico de Estrutura de Dados -            |");
 	printf("|                     Eric Cruz e Lucas Ferreira - 2 periodo                   |");
 	printf("--------------------------------------------------------------------------------\n");
 }
 
-void limpartela() {
+void limpartela(){
 	system("clear || cls");
 }
 
@@ -61,6 +61,22 @@ void menu(){
 		case 2:
             cadastroFuncionario(funcPtr, deptPtr);
 			break;
+        case 3:
+            alterarFuncionario(funcPtr, deptPtr);
+            break;
+        case 4:
+            alterarDepartamentoFuncionario(funcPtr, deptPtr);
+            break;
+        case 5:
+
+            break;
+        case 6:
+            exibirFuncionario(funcPtr);
+            break;
+
+        case 15:
+
+            break;
 		}
 
 	} while (operador  != 0);
