@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 
 #include "TrabalhoPratico1.h"
 #include "arquivos.h"
@@ -46,13 +47,24 @@ int cadastroDepartamento(FILE *deptPtr){
 
 }
 
-int cadastroFuncionario(FILE *funcPtr, FILE *deptPtr){
+int cadastroFuncionario(FILE *funcPtr, FILE *deptPtr, FILE *histFuncPtr){
+
+    if(getNewIdDepartamento(deptPtr) == 1)
+        return -1;
+
     int sair = 0;
     Funcionario sfuncionario;
+    HistoricoFuncionario hfunc;
+
+    strcpy(hfunc.data, __DATE__);
 
     sfuncionario.id = getNewIdFuncionario(funcPtr);
 
+    hfunc.id_funcionario = sfuncionario.id;
+
     do{
+
+        do{
         limpartela();
         enunciado();
         printf(" - Forneca a matricula do funcionario: ");
@@ -60,7 +72,7 @@ int cadastroFuncionario(FILE *funcPtr, FILE *deptPtr){
         fgets(sfuncionario.matricula, 11, stdin);
         if(sfuncionario.matricula[strlen(sfuncionario.matricula)-1] == '\n')
                 sfuncionario.matricula[strlen(sfuncionario.matricula)-1]='\0';
-
+        }while(pesquisaFuncionario(funcPtr, sfuncionario.matricula) != -1 );
         do{
             limpartela();
             enunciado();
@@ -87,7 +99,7 @@ int cadastroFuncionario(FILE *funcPtr, FILE *deptPtr){
             fgets(sfuncionario.cpf,12,stdin);
         }while(validaCPF(sfuncionario.cpf) != 1);
 
-        if(pesquisaFuncionarioById(funcPtr, sfuncionario.id)!= -1){
+        if(pesquisaFuncionarioById(funcPtr, sfuncionario.id) == -1){
             do{
                 limpartela();
                 enunciado();
@@ -96,7 +108,7 @@ int cadastroFuncionario(FILE *funcPtr, FILE *deptPtr){
                 //retirando o /n
                 if(sfuncionario.nome[strlen(sfuncionario.nome)-1] == '\n')
                     sfuncionario.nome[strlen(sfuncionario.nome)-1]='\0';
-            }while(pesquisaDepartamento(deptPtr, sfuncionario.id_departamento) != -1);
+            }while(pesquisaDepartamento(deptPtr, sfuncionario.id_departamento) == -1);
             do{
 
                 limpartela();
@@ -160,6 +172,8 @@ int cadastroFuncionario(FILE *funcPtr, FILE *deptPtr){
             setbuf(stdin, NULL);
             fgets(sfuncionario.email, 30, stdin);
         }while(campovazio(sfuncionario.email) == 0);
+        hfunc.id_departamento = sfuncionario.id_departamento;
+        arquivaHistFunc(histFuncPtr, hfunc);
         arquivaFuncionario(funcPtr, sfuncionario);
         printf("Digite 1 para sair ou 0 para continuar: ");
         scanf("%d", &sair);
@@ -229,7 +243,7 @@ int alterarFuncionario(FILE *funcPtr, FILE *deptPtr){
                     //retirando o /n
                     if(nfuncionario.nome[strlen(nfuncionario.nome)-1] == '\n')
                         nfuncionario.nome[strlen(nfuncionario.nome)-1]='\0';
-                }while(pesquisaDepartamento(deptPtr, nfuncionario.id_departamento) == nfuncionario.id_departamento);
+                }while(pesquisaDepartamento(deptPtr, nfuncionario.id_departamento) == -1);
                 do{
                     limpartela();
                     enunciado();
@@ -333,8 +347,13 @@ int alterarDepartamentoFuncionario(FILE *funcPtr, FILE *deptPtr){
             ndfuncionario = consultaFuncionario(funcPtr, posicao);
             limpartela();
             enunciado();
-            printf("Forneca o novo departamento de %s", ndfuncionario->nome);
+            printf("Forneca o novo departamento de %s: ", ndfuncionario->nome);
             scanf("%ld", &ndfuncionario->id_departamento);
+
+            if(pesquisaDepartamento(deptPtr, ndfuncionario->id_departamento) == -1){
+                free(ndfuncionario);
+                continue;
+            }
 
             alteraRegistroFuncionario(funcPtr, *ndfuncionario, posicao);
             free(ndfuncionario);
@@ -349,6 +368,63 @@ int alterarDepartamentoFuncionario(FILE *funcPtr, FILE *deptPtr){
 
     return 1;
 }
+
+int alterarGerenteDepartamento(FILE *funcPtr, FILE *deptPtr){
+
+    int sair = 0, posicao, posFunc;
+    long id;
+    char mat[10];
+    Departamento *ndepartamento;
+    Funcionario *nfuncionario;
+
+    limpartela();
+    enunciado();
+    printf("Forneca o ID do Departamento que deseja alterar :");
+    scanf("%ld", &id);
+
+    printf("\n ID Departamento: [%ld]\n", id);
+    posicao = pesquisaDepartamento(deptPtr, id);
+    if(posicao==-1){
+        limpartela();
+        enunciado();
+        printf("Departamento inexistente");
+        setbuf(stdin,NULL);
+        getchar();
+        return -1;
+    }else{
+        do{
+            ndepartamento = consultaDepartamento(deptPtr, posicao);
+            limpartela();
+            enunciado();
+            printf("Forneca o novo Gerente de %s: ", ndepartamento->nome);
+            setbuf(stdin, NULL);
+            fgets(mat, 10, stdin);
+
+            if(mat[strlen(mat)-1] == '\n')
+                mat[strlen(mat)-1]='\0';
+
+            posFunc = pesquisaFuncionario(funcPtr, mat);
+
+            if(posFunc == -1){
+                free(ndepartamento);
+                continue;
+            }
+
+            nfuncionario = consultaFuncionario(funcPtr, posFunc);
+
+            ndepartamento->id_gerente = nfuncionario->id;
+
+            alteraRegistroDepartamento(deptPtr, *ndepartamento, posicao);
+            free(ndepartamento);
+            free(nfuncionario);
+            printf("Digite 1 para sair ou 0 para realterar os dados: ");
+            scanf("%d", &sair);
+        }while(sair!=1);
+    }
+
+    return 0;
+}
+
 
 int exibirFuncionario(FILE *funcPtr){
     Funcionario *efuncionario;

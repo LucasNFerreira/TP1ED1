@@ -44,7 +44,7 @@ void menu(){
 		printf("\n 2 - Cadastro de Funcionário");
 		printf("\n 3 - Alterar funcionário");
 		printf("\n 4 - Alterar Departamento Funcionario");
-		printf("\n 5 - Alterar o gerente de um funcionario");
+		printf("\n 5 - Alterar o gerente de um Departamento");
 		printf("\n 6 - Consulta Funcionário Matrícula");
 		printf("\n 7 - Gerar Folha Pagamento");
 		printf("\n 8 - Alterar o salário de um funcionário");
@@ -59,7 +59,7 @@ void menu(){
 			cadastroDepartamento(deptPtr);
 			break;
 		case 2:
-            cadastroFuncionario(funcPtr, deptPtr);
+            cadastroFuncionario(funcPtr, deptPtr, histFuncPtr);
 			break;
         case 3:
             alterarFuncionario(funcPtr, deptPtr);
@@ -68,7 +68,7 @@ void menu(){
             alterarDepartamentoFuncionario(funcPtr, deptPtr);
             break;
         case 5:
-
+            alterarGerenteDepartamento(funcPtr, deptPtr);
             break;
         case 6:
             exibirFuncionario(funcPtr);

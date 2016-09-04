@@ -105,7 +105,7 @@
 
 1472750220 /home/lucas/Documents/TrabalhoPratico1/TrabalhoPratico1.h
 
-1472939291 source:/home/lucas/Documents/TrabalhoPratico1/TrabalhoPratico1.c
+1473003515 source:/home/lucas/Documents/TrabalhoPratico1/TrabalhoPratico1.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
@@ -120,15 +120,16 @@
 	<stdio.h>
 	"estruturas.h"
 
-1472939252 /home/lucas/Documents/TrabalhoPratico1/crud.h
+1473003562 /home/lucas/Documents/TrabalhoPratico1/crud.h
 
 1472750220 source:/home/lucas/Documents/TrabalhoPratico1/Validadores.c
 	<string.h>
 
-1472945023 source:/home/lucas/Documents/TrabalhoPratico1/crud.c
+1473005042 source:/home/lucas/Documents/TrabalhoPratico1/crud.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+	<time.h>
 	"TrabalhoPratico1.h"
 	"arquivos.h"
 	"Validadores.h"
