@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <time.h>
+#include <locale.h>
 
 #include "estruturas.h"
 #include "Validadores.h"
@@ -38,6 +40,7 @@ void menu(){
     do {
         limpartela();
 		enunciado();
+		printf("\n Data Atual: %s\n", __DATE__);
 		printf(" \n - Selecione a opcao que deseja digitando o numero dela e teclando ENTER -");
 		printf("\n 0 - Para sair");
 		printf("\n 1 - Cadastro de departamento");
@@ -56,26 +59,37 @@ void menu(){
 
 		switch (operador) {
 		case 1:
-			cadastroDepartamento(deptPtr);
+			cadastroDepartamento(deptPtr, deptPtr, histDeptPtr);
 			break;
 		case 2:
-            cadastroFuncionario(funcPtr, deptPtr, histFuncPtr);
+            cadastroFuncionario(funcPtr, deptPtr, histFuncPtr, histSalPtr);
 			break;
         case 3:
-            alterarFuncionario(funcPtr, deptPtr);
+            alterarFuncionario(funcPtr, deptPtr,histFuncPtr);
             break;
         case 4:
-            alterarDepartamentoFuncionario(funcPtr, deptPtr);
+            alterarDepartamentoFuncionario(funcPtr, deptPtr,histFuncPtr);
             break;
         case 5:
-            alterarGerenteDepartamento(funcPtr, deptPtr);
+            alterarGerenteDepartamento(funcPtr, deptPtr, histDeptPtr);
             break;
         case 6:
             exibirFuncionario(funcPtr);
             break;
-
-        case 15:
-
+        case 7:
+            gerarPagamento(funcPtr);
+            break;
+        case 8:
+            alterarSalario(funcPtr, histSalPtr);
+            break;
+        case 9:
+            relatorioFuncionarios(funcPtr,deptPtr);
+            break;
+        case 10:
+            historicoSalarioPeriodo(histSalPtr, funcPtr);
+            break;
+        case 11:
+            relatorioGerenteDepartamento(funcPtr, deptPtr);
             break;
 		}
 
@@ -89,6 +103,7 @@ void menu(){
 }
 
 int iniciar(){
+    setlocale(LC_ALL, "Portuguese");
     menu();
     return 0;
 }

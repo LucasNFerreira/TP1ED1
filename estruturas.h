@@ -4,7 +4,7 @@
 typedef struct{
     long id, id_departamento, numero;
     char matricula[10];
-    char nome[6];
+    char nome[60];
     char dataNascimento[11], cpf[11];
     double salario;
     char rua[40], bairro[30], cidade[30],

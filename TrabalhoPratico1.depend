@@ -1,16 +1,26 @@
 # depslib dependency file v1.0
-1471889034 source:/home/lucas/Documents/TrabalhoPratico1/main.c
+1472750220 source:/home/lucas/Documents/TrabalhoPratico1/main.c
+	<stdio.h>
+	<stdlib.h>
+	"TrabalhoPratico1.h"
 	<stdio.h>
 	<stdlib.h>
 	"TrabalhoPratico1.h"
 
 1472750220 ratico1.h"
 
-1472737493 /home/lucas/Documents/TrabalhoPratico1/TrabalhoPratico1.h
+1472750220 /home/lucas/Documents/TrabalhoPratico1/TrabalhoPratico1.h
 
-1472737461 source:/home/lucas/Documents/TrabalhoPratico1/TrabalhoPratico1.c
+1473003515 source:/home/lucas/Documents/TrabalhoPratico1/TrabalhoPratico1.c
 	<stdio.h>
 	<string.h>
+	"estruturas.h"
+	"Validadores.h"
+	"arquivos.h"
+	"crud.h"
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
 	"estruturas.h"
 	"Validadores.h"
 	"arquivos.h"
@@ -18,7 +28,11 @@
 
 1472750220 
 
-1472737383 source:/home/lucas/Documents/TrabalhoPratico1/arquivos.c
+1472939542 source:/home/lucas/Documents/TrabalhoPratico1/arquivos.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	"estruturas.h"
 	<stdlib.h>
 	<string.h>
 	<stdio.h>
@@ -26,27 +40,37 @@
 
 1472839670 s.h"
 
-1471181382 /home/lucas/Documents/TrabalhoPratico1/estruturas.h
+1472750220 /home/lucas/Documents/TrabalhoPratico1/estruturas.h
 
-1472739235 source:/home/lucas/Documents/TrabalhoPratico1/Validadores.c
+1472750220 source:/home/lucas/Documents/TrabalhoPratico1/Validadores.c
+	<string.h>
 	<string.h>
 
-1472739155 /home/lucas/Documents/TrabalhoPratico1/Validadores.h
+1472750220 /home/lucas/Documents/TrabalhoPratico1/Validadores.h
 
-1472736955 /home/lucas/Documents/TrabalhoPratico1/arquivos.h
+1472934782 /home/lucas/Documents/TrabalhoPratico1/arquivos.h
+	<stdio.h>
+	"estruturas.h"
 	<stdio.h>
 	"estruturas.h"
 
-1472739322 source:/home/lucas/Documents/TrabalhoPratico1/crud.c
+1473005042 source:/home/lucas/Documents/TrabalhoPratico1/crud.c
 	<stdio.h>
 	<string.h>
+	"TrabalhoPratico1.h"
+	"arquivos.h"
+	"Validadores.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
 	"TrabalhoPratico1.h"
 	"arquivos.h"
 	"Validadores.h"
 
 1472750220 es.h"
 
-1472512047 /home/lucas/Documents/TrabalhoPratico1/crud.h
+1473003562 /home/lucas/Documents/TrabalhoPratico1/crud.h
 
 1472750220 source:c:\users\usuario\desktop\tp1ed1-master\crud.c
 	<stdio.h>
@@ -90,22 +114,40 @@
 
 1472750220 c:\users\usuario\desktop\tp1ed1-master\crud.h
 
-1472939542 source:/home/lucas/Documents/TrabalhoPratico1/arquivos.c
+1472939542 source:c:\users\effolex\downloads\trabalhopratico1(v.1.7)\trabalhopratico1\arquivos.c
 	<stdlib.h>
 	<string.h>
 	<stdio.h>
 	"estruturas.h"
 
-1472750220 /home/lucas/Documents/TrabalhoPratico1/estruturas.h
+1472750220 c:\users\effolex\downloads\trabalhopratico1(v.1.7)\trabalhopratico1\estruturas.h
 
-1472750220 source:/home/lucas/Documents/TrabalhoPratico1/main.c
+1472750220 source:c:\users\effolex\downloads\trabalhopratico1(v.1.7)\trabalhopratico1\main.c
 	<stdio.h>
 	<stdlib.h>
 	"TrabalhoPratico1.h"
 
-1472750220 /home/lucas/Documents/TrabalhoPratico1/TrabalhoPratico1.h
+1472750220 c:\users\effolex\downloads\trabalhopratico1(v.1.7)\trabalhopratico1\trabalhopratico1.h
 
-1473003515 source:/home/lucas/Documents/TrabalhoPratico1/TrabalhoPratico1.c
+1472750220 source:c:\users\effolex\downloads\trabalhopratico1(v.1.7)\trabalhopratico1\validadores.c
+	<string.h>
+
+1473032874 source:c:\users\effolex\downloads\trabalhopratico1(v.1.7)\trabalhopratico1\crud.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"TrabalhoPratico1.h"
+	"arquivos.h"
+	"Validadores.h"
+
+1472934782 c:\users\effolex\downloads\trabalhopratico1(v.1.7)\trabalhopratico1\arquivos.h
+	<stdio.h>
+	"estruturas.h"
+
+1472750220 c:\users\effolex\downloads\trabalhopratico1(v.1.7)\trabalhopratico1\validadores.h
+
+1473007340 source:c:\users\effolex\downloads\trabalhopratico1(v.1.7)\trabalhopratico1\trabalhopratico1.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
@@ -114,18 +156,138 @@
 	"arquivos.h"
 	"crud.h"
 
-1472750220 /home/lucas/Documents/TrabalhoPratico1/Validadores.h
+1473003562 c:\users\effolex\downloads\trabalhopratico1(v.1.7)\trabalhopratico1\crud.h
 
-1472934782 /home/lucas/Documents/TrabalhoPratico1/arquivos.h
+1472939542 source:f:\lucas\trabalhopratico1\arquivos.c
+	<stdlib.h>
+	<string.h>
 	<stdio.h>
 	"estruturas.h"
 
-1473003562 /home/lucas/Documents/TrabalhoPratico1/crud.h
+1472750220 f:\lucas\trabalhopratico1\estruturas.h
 
-1472750220 source:/home/lucas/Documents/TrabalhoPratico1/Validadores.c
+1473079072 source:f:\lucas\trabalhopratico1\crud.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"TrabalhoPratico1.h"
+	"arquivos.h"
+	"Validadores.h"
+
+1472750220 f:\lucas\trabalhopratico1\trabalhopratico1.h
+
+1472934782 f:\lucas\trabalhopratico1\arquivos.h
+	<stdio.h>
+	"estruturas.h"
+
+1472750220 f:\lucas\trabalhopratico1\validadores.h
+
+1472750220 source:f:\lucas\trabalhopratico1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"TrabalhoPratico1.h"
+
+1472750220 source:f:\lucas\trabalhopratico1\validadores.c
 	<string.h>
 
-1473005042 source:/home/lucas/Documents/TrabalhoPratico1/crud.c
+1473079450 source:f:\lucas\trabalhopratico1\trabalhopratico1.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<time.h>
+	<locale.h>
+	"estruturas.h"
+	"Validadores.h"
+	"arquivos.h"
+	"crud.h"
+
+1473076952 f:\lucas\trabalhopratico1\crud.h
+
+1472939542 source:c:\users\usuario\downloads\trabalhopratico1(v.1.9)\trabalhopratico1\arquivos.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	"estruturas.h"
+
+1473082408 c:\users\usuario\downloads\trabalhopratico1(v.1.9)\trabalhopratico1\estruturas.h
+
+1472750220 source:c:\users\usuario\downloads\trabalhopratico1(v.1.9)\trabalhopratico1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"TrabalhoPratico1.h"
+
+1472750220 c:\users\usuario\downloads\trabalhopratico1(v.1.9)\trabalhopratico1\trabalhopratico1.h
+
+1473081710 source:c:\users\usuario\downloads\trabalhopratico1(v.1.9)\trabalhopratico1\trabalhopratico1.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<time.h>
+	<locale.h>
+	"estruturas.h"
+	"Validadores.h"
+	"arquivos.h"
+	"crud.h"
+
+1472750220 c:\users\usuario\downloads\trabalhopratico1(v.1.9)\trabalhopratico1\validadores.h
+
+1472934782 c:\users\usuario\downloads\trabalhopratico1(v.1.9)\trabalhopratico1\arquivos.h
+	<stdio.h>
+	"estruturas.h"
+
+1473081710 c:\users\usuario\downloads\trabalhopratico1(v.1.9)\trabalhopratico1\crud.h
+
+1472750220 source:c:\users\usuario\downloads\trabalhopratico1(v.1.9)\trabalhopratico1\validadores.c
+	<string.h>
+
+1473082583 source:c:\users\usuario\downloads\trabalhopratico1(v.1.9)\trabalhopratico1\crud.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"TrabalhoPratico1.h"
+	"arquivos.h"
+	"Validadores.h"
+
+1472939542 source:f:\trabalhopratico1\arquivos.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	"estruturas.h"
+
+1473082408 f:\trabalhopratico1\estruturas.h
+
+1472750220 source:f:\trabalhopratico1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"TrabalhoPratico1.h"
+
+1472750220 f:\trabalhopratico1\trabalhopratico1.h
+
+1473086916 source:f:\trabalhopratico1\trabalhopratico1.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<time.h>
+	<locale.h>
+	"estruturas.h"
+	"Validadores.h"
+	"arquivos.h"
+	"crud.h"
+
+1472750220 f:\trabalhopratico1\validadores.h
+
+1472934782 f:\trabalhopratico1\arquivos.h
+	<stdio.h>
+	"estruturas.h"
+
+1473086805 f:\trabalhopratico1\crud.h
+
+1472750220 source:f:\trabalhopratico1\validadores.c
+	<string.h>
+
+1473087720 source:f:\trabalhopratico1\crud.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
